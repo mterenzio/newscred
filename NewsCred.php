@@ -34,7 +34,7 @@ class NewsCred {
 	
 	public function searchArticles($options = array()) {
 		$params = $this->setParams($options);
-		$this->api = $this->api.'/articles'.$params;
+		$this->api .='/articles'.$params;
 		$results = $this->apiReq();		
 		return $results;
 	}
@@ -251,6 +251,7 @@ class NewsCred {
 	
 	private function apiReq() {
 		$ch = curl_init();
+		echo $this-api;
 		curl_setopt($ch, CURLOPT_URL, $this->api);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 60);
@@ -264,7 +265,7 @@ class NewsCred {
 		foreach ($options as $key => $value) {
 			$params .= '&'.urlencode($key).'='.urlencode($value);
 		}
-		$params .= $params.'&format='.urlencode($this->format);
+		$params .= '&format='.urlencode($this->format);
 		return $params;	
 	}	
 	
