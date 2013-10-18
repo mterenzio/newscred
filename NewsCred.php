@@ -251,7 +251,6 @@ class NewsCred {
 	
 	private function apiReq() {
 		$ch = curl_init();
-		echo $this-api;
 		curl_setopt($ch, CURLOPT_URL, $this->api);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 60);
