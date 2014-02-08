@@ -60,7 +60,7 @@ class NewsCred {
 		return $results;
 	}
 
-	public function relatedArticles($options = array()) {
+	public function relatedArticles($guid, $options = array()) {
 		$params = $this->setParams($options);
 		$this->api = $this->api.'/article/'.$guid.'/articles'.$params;
 		$results = $this->apiReq();		
