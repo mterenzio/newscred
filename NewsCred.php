@@ -1,7 +1,6 @@
 <?php
 namespace NewsCred;
 /**
-* 
 *
 * NewsCred
 * Class for working with NewsCred API
