@@ -249,7 +249,7 @@ class NewsCred {
 
 	}
 	
-	private function apiReq() {
+	protected function apiReq() {
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $this->api);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -259,7 +259,7 @@ class NewsCred {
 		return $response;	
 	}
 	
-	private function setParams($options = array()) {
+	protected function setParams($options = array()) {
 		$params = '?access_key='.$this->access_key;
 		foreach ($options as $key => $value) {
 			$params .= '&'.urlencode($key).'='.urlencode($value);
