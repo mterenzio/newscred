@@ -19,10 +19,10 @@ namespace NewsCred;
 
 class NewsCred {
 
-	private $api = 'http://api.newscred.com';
-	private $access_key;
-	private $format = 'json';
-	private $data;	
+	protected $api = 'http://api.newscred.com';
+	protected $access_key;
+	protected $format = 'json';
+	protected $data;	
 
 	public function __construct($access_key) {
 		if (empty($access_key)) {
