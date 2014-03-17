@@ -34,8 +34,7 @@ class NewsCred {
 	
 	public function searchArticles($options = array()) {
 		$params = $this->setParams($options);
-		$this->api .='/articles'.$params;
-		$results = $this->apiReq();		
+		$results = $this->apiReq( $this->api . '/articles' . $params );		
 		return $results;
 	}
 
