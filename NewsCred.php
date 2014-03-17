@@ -40,31 +40,36 @@ class NewsCred {
 
 	public function article($guid, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/article/'.$guid.$params);		
+		$this->api = $this->api.'/article/'.$guid.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 	
 	public function articleTopics($options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/article/'.$guid.'/topics'.$params);		
+		$this->api = $this->api.'/article/'.$guid.'/topics'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 
 	public function articlesImages($options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/article/'.$guid.'/images'.$params);		
+		$this->api = $this->api.'/article/'.$guid.'/images'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 
 	public function relatedArticles($guid, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/article/'.$guid.'/articles'.$params);		
+		$this->api = $this->api.'/article/'.$guid.'/articles'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 
 	public function searchStories($options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/stories'.$params);		
+		$this->api = $this->api.'/stories'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 
@@ -73,20 +78,23 @@ class NewsCred {
 			throw new Exception('The query parameter is required.');
 		} else {
 			$params = $this->setParams($options);
-			$results = $this->apiReq($this->api.'/categories'.$params);		
+			$this->api = $this->api.'/categories'.$params;
+			$results = $this->apiReq();		
 			return $results;			
 		}
 	}
 
 	public function categoryArticles($dashnamed, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/category/'.$dashnamed.'/articles'.$params);		
+		$this->api = $this->api.'/category/'.$dashnamed.'/articles'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 								
 	public function categoryStories($dashnamed, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/category/'.$dashnamed.'/stories'.$params);		
+		$this->api = $this->api.'/category/'.$dashnamed.'/stories'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 
@@ -99,19 +107,22 @@ class NewsCred {
 
 	public function categoryTopics($dashnamed, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/category/'.$dashnamed.'/images'.$params);		
+		$this->api = $this->api.'/category/'.$dashnamed.'/topics'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 
 	public function categorySources($dashnamed, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/category/'.$dashnamed.'/sources'.$params);		
+		$this->api = $this->api.'/category/'.$dashnamed.'/sources'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 
 	public function topic($guid, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/topic/'.$guid.$params);		
+		$this->api = $this->api.'/topic/'.$guid.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 
@@ -124,13 +135,15 @@ class NewsCred {
 
 	public function topicStories($guid, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/topic/'.$guid.'/articles'.$params);		
+		$this->api = $this->api.'/topic/'.$guid.'/stories'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 							
 	public function topicImages($guid, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/topic/'.$guid.'/images'.$params);		
+		$this->api = $this->api.'/topic/'.$guid.'/images'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 
@@ -139,32 +152,37 @@ class NewsCred {
 			throw new Exception('The query parameter is required.');
 		} else {
 			$params = $this->setParams($options);
-			$results = $this->apiReq($this->api.'/topics/related'.$params);		
+			$this->api = $this->api.'/topics/related'.$params;
+			$results = $this->apiReq();		
 			return $results;			
 		}
 	}
 
 	public function searchTopics($options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/topics'.$params);		
+		$this->api = $this->api.'/topics'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 
 	public function topicSources($guid, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/topic/'.$guid.'/sources'.$params);		
+		$this->api = $this->api.'/topic/'.$guid.'/sources'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 				
 	public function topicVideos($guid, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/topic/'.$guid.'/videos'.$params);		
+		$this->api = $this->api.'/topic/'.$guid.'/videos'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 
 	public function relatedTopics($guid, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/topic/'.$guid.'/topics'.$params);		
+		$this->api = $this->api.'/topic/'.$guid.'/topics'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 
@@ -181,7 +199,8 @@ class NewsCred {
 
 	public function relatedTweets($guid, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/topics/extract'.$params);		
+		$this->api = $this->api.'/topic/'.$guid.'/tweets'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 
@@ -190,26 +209,30 @@ class NewsCred {
 			throw new Exception('The query parameter is required.');
 		} else {
 			$params = $this->setParams($options);
-			$results = $this->apiReq($this->api.'/videos'.$params);		
+			$this->api = $this->api.'/videos'.$params;
+			$results = $this->apiReq();		
 			return $results;			
 		}
 	}
 					
 	public function author($guid, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/author/'.$guid.$params);		
+		$this->api = $this->api.'/author/'.$guid.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 
 	public function authorArticles($guid, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/author/'.$guid.'/articles'.$params);		
+		$this->api = $this->api.'/author/'.$guid.'/articles'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 		
 	public function authorTopics($guid, $options = array()) {
 		$params = $this->setParams($options);
-		$results = $this->apiReq($this->api.'/author/'.$guid.'/topics'.$params);		
+		$this->api = $this->api.'/author/'.$guid.'/topics'.$params;
+		$results = $this->apiReq();		
 		return $results;
 	}
 	
@@ -218,15 +241,16 @@ class NewsCred {
 			throw new Exception('The query parameter is required.');
 		} else {
 			$params = $this->setParams($options);
-			$results = $this->apiReq($this->api.'/tweets'.$params);		
+			$this->api = $this->api.'/tweets'.$params;
+			$results = $this->apiReq();		
 			return $results;			
 		}
 
 	}
 	
-	protected function apiReq($req) {
+	protected function apiReq() {
 		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $req);
+		curl_setopt($ch, CURLOPT_URL, $this->api);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 60);
 		$response = curl_exec($ch);
