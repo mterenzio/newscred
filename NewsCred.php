@@ -19,10 +19,10 @@ namespace NewsCred;
 
 class NewsCred {
 
-	private $api = 'http://api.newscred.com';
-	private $access_key;
-	private $format = 'json';
-	private $data;	
+	protected $api = 'http://api.newscred.com';
+	protected $access_key;
+	protected $format = 'json';
+	protected $data;	
 
 	public function __construct($access_key) {
 		if (empty($access_key)) {
@@ -34,8 +34,7 @@ class NewsCred {
 	
 	public function searchArticles($options = array()) {
 		$params = $this->setParams($options);
-		$this->api .='/articles'.$params;
-		$results = $this->apiReq();		
+		$results = $this->apiReq( $this->api . '/articles' . $params );		
 		return $results;
 	}
 
@@ -249,7 +248,7 @@ class NewsCred {
 
 	}
 	
-	private function apiReq() {
+	protected function apiReq() {
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $this->api);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -259,7 +258,7 @@ class NewsCred {
 		return $response;	
 	}
 	
-	private function setParams($options = array()) {
+	protected function setParams($options = array()) {
 		$params = '?access_key='.$this->access_key;
 		foreach ($options as $key => $value) {
 			$params .= '&'.urlencode($key).'='.urlencode($value);
